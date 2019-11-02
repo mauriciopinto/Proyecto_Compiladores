@@ -4,10 +4,20 @@
 
 using namespace std;
 
-enum = 
+enum Z1 {
+	ein,
+	zwei,
+	drei,
+	vier,
+	funf,
+	sechs,
+	sieben,
+	acht,
+	neun
+};
 
 bool scan(string);
-vector<string> parse;
+vector<string> parse(string);
 int convert(string);
 
 bool scan(string str){
