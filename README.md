@@ -18,17 +18,17 @@ R11 : U → Z1+und
 Donde:
 
 ```
-Z1 = {ein, zwei, drei, vier, f ̈unf, sechs, sieben, acht, neun}
-Z2 = {zehn, elf, zwölf }
-Z3 = {drei, vier, fünf, sech, sieb, acht, neun }
-Z4 = {zwan, vier, fünf, sech, sieb, acht, neun }
-Z5 = {hundert}
-Z6 = {tausend}
-drei = {drei}
-zehn = {zehn}
-zig = {zig}
-ssig = {ssig}
-und = {und}
+Z1 = {ein (uno), zwei (dos), drei (tres), vier (cuatro), fünf (cinco), sechs (seis), sieben (siete), acht (ocho), neun (nueve)}
+Z2 = {zehn (diez), elf (once), zwölf (doce) }
+Z3 = {drei (tre), vier (cator), fünf (quin), sech (seis), sieb (siete), acht (ocho), neun (nueve)}
+Z4 = {zwan (veinte), vier (cuarenta), fünf (cincuenta), sech (sesenta), sieb (setenta), acht (ochenta), neun (noventa) }
+Z5 = {hundert (cien)}
+Z6 = {tausend (mil)}
+drei = {drei (tres)}
+zehn = {zehn (diez)}
+zig = {zig (diez)}
+ssig = {ssig (diez)}
+und = {und (y)}
 ```
 
 El proyecto, consistirá de las siguientes partes:
