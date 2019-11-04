@@ -14,7 +14,9 @@ Z7: Z6 A1 | Z6 A0 | Z6 A7 | Z6 Z2 | Z6 Z3 | Z6 Z4;
 Z8: Z2 A10;
 Z9: Z8 A1 | Z8 A7 | Z8 Z2 | Z8 Z3 | Z8 Z4;
 Z10: A1 A11 | A0 A11 | A7 A11 | Z2 A11 | Z3 A11 | Z4 A11 | Z6 A11 | Z7 A11;
-Z11: 
+Z11: A11 A1 | A11 A0 | A11 A7 | A11 | Z2 | A11 Z3 | A11 Z4 | A11 Z6 | A11 Z7;
+Z11: Z10 A0 | Z10 A1 | Z10 A7 | Z10 A7 | Z10 Z2 | Z10 Z3 | Z10 Z4 | Z10 Z6 | Z10 Z7;
+
 %%
 #include "lex.yy.c"
 main() {
