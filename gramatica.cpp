@@ -64,6 +64,8 @@ vector<string> parse(string str){
 	for(int i = 0; i < list.size(); i++){
 		cout << list[i] << endl;
 	}
+	for (auto l :list)
+		cout << l << endl;
 	return list;
 }
 
@@ -124,7 +126,7 @@ int convert(string str){
 int main(){
 	init_map();
 	string number;
-	printf("Ingrese un numero en aleman");
+	printf("Ingrese un numero en aleman: ");
 	cin >> number;
 	if(!scan(number)){
 		printf("cadena invalida");
