@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <iostream>
 #include <string>
 #include <vector>
 #include "structs.h"
@@ -98,7 +99,7 @@ int convert(string str){
 int main(){
 	string number;
 	printf("Ingrese un numero en aleman");
-	scanf("%s", number);
+	cin >> number;
 	if(!scan(number)){
 		printf("cadena invalida");
 		return 0;
