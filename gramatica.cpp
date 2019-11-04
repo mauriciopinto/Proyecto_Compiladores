@@ -88,6 +88,8 @@ vector<string> parse(string str){
 			s.clear();
 		}
 	}
+	for (auto l :list)
+		cout << l << endl;
 	return list;
 }
 
