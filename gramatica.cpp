@@ -97,7 +97,7 @@ int convert(string str){
 
 int main(){
 	string number;
-	printf("Ingrese un numero en aleman");
+	printf("Ingrese un numero en aleman: \n");
 	scanf("%s", number);
 	if(!scan(number)){
 		printf("cadena invalida");
