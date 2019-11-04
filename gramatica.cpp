@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "number.h"
 #include "structs.h"
 
 string invalid_chars = "0123456789-=+_)(*&^%$#@!`~}]{[';:?/>.<, ";
@@ -14,48 +15,8 @@ bool in_maps(string);
 
 /*busca en todos los maps el string*/
 bool in_maps(string str){
-	for(z1_it = z1_map.begin(); z1_it != z1_map.end(); z1_it++)
-		if(str == z1_it->first)
-			return true;
-
-	for(z2_it = z2_map.begin(); z2_it != z2_map.end(); z2_it++)
-		if(str == z2_it->first)
-			return true;
-
-	for(z3_it = z3_map.begin(); z3_it != z3_map.end(); z3_it++) 
-                if(str == z3_it->first)
-                        return true;
-
-	for(z4_it = z4_map.begin(); z4_it != z4_map.end(); z4_it++)
-                if(str == z4_it->first)
-                        return true;
-	
-	for(z5_it = z5_map.begin(); z5_it != z5_map.end(); z5_it++)
-                if(str == z5_it->first)
-                        return true;
-
-	for(z6_it = z6_map.begin(); z6_it != z6_map.end(); z6_it++) 
-                if(str == z6_it->first)
-                        return true;
-	
-	for(drei_it = drei_map.begin(); drei_it != drei_map.end(); drei_it++) 
-                if(str == drei_it->first)
-                        return true;
-	
-	for(zehn_it = zehn_map.begin(); zehn_it != zehn_map.end(); zehn_it++)
-                if(str == zehn_it->first)
-                        return true;
-	
-	for(zig_it = zig_map.begin(); zig_it != zig_map.end(); zig_it++)
-                if(str == zig_it->first)
-                        return true;
-
-	for(ssig_it = ssig_map.begin(); ssig_it != ssig_map.end(); ssig_it++)
-                if(str == ssig_it->first)
-                        return true;
-
-	for(und_it = und_map.begin(); und_it != und_map.end(); und_it++)
-                if(str == und_it->first)
+	for(it = values.begin(); it != values.end(); it++) 
+                if(str == it->first)
                         return true;
 	return false;
 }
@@ -81,23 +42,87 @@ bool scan(string str){
 vector<string> parse(string str){
 	vector<string> list;
 	string s;
-	for(int i = 0; i < str.size(); i++){
+	int i = 0;
+	while(i < str.size()){
 		s += str[i];
+		if(s == "sech" && str[i + 1] == 's'){
+			i++;
+			s += str[i];
+		}
+                if(s == "sieb" && str[i + 1] == 'e' && str[i + 2] == 'n'){
+			i++;
+			s += str[i];
+			i++;
+			s += str[i];
+		}
 		if(in_maps(s)){
 			list.push_back(s);
 			s.clear();
 		}
+		i++;
+	}
+	for(int i = 0; i < list.size(); i++){
+		cout << list[i] << endl;
 	}
 	return list;
 }
 
 int convert(string str){
 	vector<string> s = parse(str);
+	rules r;
+	switch(r){
+		case Z1:
+			break;
+		case Z2:
+			break;
+	 	case Z3:
+			break;
+		case Z4:
+			break;
+		case Z5:
+			break;
+		case Z6:
+			break;
+		case Z7:
+			break;
+		case Z8:
+			break;
+		case Z9:
+			break;
+		case Z10:
+			break;
+		case Z11:
+			break;
+		case A0:
+			break;
+		case A1:
+			break;
+		case A2:
+			break;
+		case A3:
+			break;
+		case A4:
+			break;
+		case A5:
+			break;
+		case A6:
+			break;
+		case A7:
+			break;
+		case A8:
+			break;
+		case A9:
+			break;
+		case A10:
+			break;
+		case A11:
+			break;		
+	}
 	return 1;
 }
 
 int main(){
-	init_maps();
+	init_map();
 	string number;
 	printf("Ingrese un numero en aleman");
 	cin >> number;
