@@ -82,11 +82,11 @@ vector<string> parse(string str){
 	vector<string> list;
 	string s;
 	for(int i = 0; i < str.size(); i++){
+		s += str[i];
 		if(in_maps(s)){
 			list.push_back(s);
 			s.clear();
 		}
-		s += str[i];
 	}
 	return list;
 }
@@ -97,6 +97,7 @@ int convert(string str){
 }
 
 int main(){
+	init_maps();
 	string number;
 	printf("Ingrese un numero en aleman");
 	cin >> number;
