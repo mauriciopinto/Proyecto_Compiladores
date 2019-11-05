@@ -18,28 +18,39 @@ R11 : U → Z1+und
 Donde:
 
 ```
-Z1 = {ein (uno), zwei (dos), drei (tres), vier (cuatro), fünf (cinco), sechs (seis), sieben (siete), acht (ocho), neun (nueve)}
-Z2 = {zehn (diez), elf (once), zwölf (doce) }
-Z3 = {drei (tre), vier (cator), fünf (quin), sech (seis), sieb (siete), acht (ocho), neun (nueve)}
-Z4 = {zwan (veinte), vier (cuarenta), fünf (cincuenta), sech (sesenta), sieb (setenta), acht (ochenta), neun (noventa) }
-Z5 = {hundert (cien)}
-Z6 = {tausend (mil)}
-drei = {drei (tres)}
-zehn = {zehn (diez)}
-zig = {zig (diez)}
-ssig = {ssig (diez)}
-und = {und (y)}
+Z1 = {ein, zwei, drei, vier, fünf, sechs, sieben, acht, neun}
+Z2 = {zehn, elf, zwölf}
+Z3 = {drei, vier, fünf, sech, sieb, acht, neun}
+Z4 = {zwan, vier, fünf, sech, sieb, acht, neun}
+Z5 = {hundert}
+Z6 = {tausend}
+drei = {drei}
+zehn = {zehn}
+zig = {zig}
+ssig = {ssig}
+und = {und}
 ```
 
 El proyecto, consistirá de las siguientes partes:
 
-- [ ] Dado un número entero, programar el scanner correspondiente (i.e. que determina expresiones válidas pero no ciertas o falsas)
-- [ ] Programar el parser correspondiente con un estado de aceptación y rechazo
-- [ ] Implementar además una regla de identificación de errores con un mensaje de error
-- [ ] Implementar las salidas del análisis (aceptado o rechazado) 
+- [x] Dado un número entero, programar el scanner correspondiente (i.e. que determina expresiones válidas pero no ciertas o falsas)
+- [x] Programar el parser correspondiente con un estado de aceptación y rechazo
+- [x] Implementar además una regla de identificación de errores con un mensaje de error
+- [x] Implementar las salidas del análisis (aceptado o rechazado) 
 
 Probar el compilador con los siguientes números:
 
-- [ ] fünftausendzweihundertneunundfünfzig
-- [ ] zweitausendneunhundertsechsundsiebzig
-- [ ] zweihundertzweiundzwanzigtausendvierhundertsiebzehn
+- [x] fünftausendzweihundertneunundfünfzig
+- [x] zweitausendneunhundertsechsundsiebzig
+- [x] zweihundertzweiundzwanzigtausendvierhundertsiebzehn
+
+Implementaciones:
+- [C++](/C++)
+- [Yacc/Lex](/Yacc-Lex)
+
+Para probar la versión en Yacc/Lex ejecutar los siguientes comandos:
+```
+yacc -d token.y
+lex token.l
+gcc lex.yy.c y.tab.c -o aleman
+```

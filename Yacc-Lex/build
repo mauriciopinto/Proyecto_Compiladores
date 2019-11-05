@@ -1,0 +1,3 @@
+yacc -d token.y
+lex token.l
+gcc lex.yy.c y.tab.c -o aleman
