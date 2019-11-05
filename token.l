@@ -18,6 +18,7 @@ zwan    {yyval.i = ; return ZWAN;}
 zehn    {yyval.i = ; return ZEHN;}
 zig     {yyval.i = ; return ZIG;}
 drei    {yyval.i = ; return DREI;}
+und     {return UND;}
 ssing   {yyval.i = ; return SSING;}
 hundert {yyval.i = ; return HUNDERT;}
 tausend {yyval.i = ; return TAUSEND;}
