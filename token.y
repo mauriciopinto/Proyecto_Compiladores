@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 extern int yylex();
+void yyerror (char *s);
 %}
 
 %union {
@@ -10,23 +11,22 @@ extern int yylex();
 }
 
 
-%token <i> ZIER FUNF ACHT NEUN EIN ZWEI SECHS SIEBEN ELF ZOLF SECH SIEB ZWAN ZEHN ZIG DREI SSING HUNDERT TAUSEND
-%token UND
+%token <i> VIER FUNF ACHT NEUN EIN ZWEI SECHS SIEBEN ELF ZOLF SECH SIEB ZWAN ZEHN ZIG DREI SSING HUNDERT TAUSEND UND
 %type <i> S Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 A0 A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11
 
 
 %%
-S:   Z1         {$$ = $1;}
-    | Z2        {$$ = $1;}
-    | Z3        {$$ = $1;}
-    | Z4        {$$ = $1;}
-    | Z5        {$$ = $1;}
-    | Z6        {$$ = $1;}
-    | Z7        {$$ = $1;}
-    | Z8        {$$ = $1;}
-    | Z9        {$$ = $1;}
-    | Z10       {$$ = $1;}
-    | Z11       {$$ = $1;}
+S:   Z1         {printf("%d\n",$1);}
+    | Z2        {printf("%d\n",$1);}
+    | Z3        {printf("%d\n",$1);}
+    | Z4        {printf("%d\n",$1);}
+    | Z5        {printf("%d\n",$1);}
+    | Z6        {printf("%d\n",$1);}
+    | Z7        {printf("%d\n",$1);}
+    | Z8        {printf("%d\n",$1);}
+    | Z9        {printf("%d\n",$1);}
+    | Z10       {printf("%d\n",$1);}
+    | Z11       {printf("%d\n",$1);}
     ;
 Z1: A1          {$$ = $1;}
     | A0        {$$ = $1;}
@@ -87,7 +87,6 @@ Z11: A11 A1     {$$ = $1 + $2;}
     | A11 Z7    {$$ = $1 + $2;}
     | Z10 A0    {$$ = $1 + $2;}
     | Z10 A1    {$$ = $1 + $2;}
-    | Z10 A7    {$$ = $1 + $2;}
     | Z10 A7    {$$ = $1 + $2;}
     | Z10 Z2    {$$ = $1 + $2;}
     | Z10 Z3    {$$ = $1 + $2;}
