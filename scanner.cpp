@@ -1,102 +1,54 @@
-#include <iostream>
-#include <string>
-#include <algorithm>
-#include <vector>
-using namespace std;
-vector <string> A1 {"ein", "zwei", "drei", "vier", "funf", "sechs", "sieben", "acht", "neun"};
-vector <string> A2 {"zehn", "elf", "zolf"};
-vector <string> A3 {"drei", "vier", "funf", "sech", "sieb", "acht", "neun"};
-vector <string> A4 {"zwan", "vier", "funf", "sech", "sieb", "acht", "neun"};
-vector <string> A5 {"zehn"};
-vector <string> A6 {"zig"};
-vector <string> A7 {"drei"};
-vector <string> A8 {"ssing"};
-vector <string> A9 {"und"};
-vector <string> A10 {"hundert"};
-vector <string> A11 {"tausend"};
-
-vector<string>::iterator itA1;
-vector<string>::iterator itA2;
-vector<string>::iterator itA3;
-vector<string>::iterator itA4;
-
-bool isSech(string input){
-    return input == "sech"? true: false;
-}
-
-bool isSieb(string input){
-    return input == "sieb"? true: false;
-}
-
-bool check (string input, vector <string> &tokens, vector <string> &rules){ 
-    itA1 = find(A1.begin(), A1.end(), input);
-    itA2 = find(A2.begin(), A2.end(), input);
-    itA3 = find(A3.begin(), A3.end(), input);
-    itA4 = find(A4.begin(), A4.end(), input);
-
-    if (itA1 != A1.end()){
-        tokens.push_back(input);
-        rules. push_back("A1");
-        return true;
-    }
-    if (itA2 != A2.end()){
-        tokens.push_back(input);
-        rules. push_back("A2");
-        return true;
-    }
-    if (itA3 != A3.end()){
-        tokens.push_back(input);
-        rules. push_back("A3");
-        return true;
-    }
-    if (itA4 != A4.end()){
-        tokens.push_back(input);
-        rules. push_back("A4");
-        return true;
-    }
-    if (input == A5[0]){
-        tokens.push_back(input);
-        rules. push_back("A5");
-        return true;
-    }else if (input == A6[0]){
-        tokens.push_back(input);
-        rules. push_back("A6");
-        return true;
-    }
-    if (input == A7[0]){
-        tokens.push_back(input);
-        rules. push_back("A7");
-        return true;
-    }
-    if (input == A8[0]){
-        tokens.push_back(input);
-        rules. push_back("A8");
-        return true;
-    }
-    if (input == A9[0]){
-        tokens.push_back(input);
-        rules. push_back("A9");
-        return true;
-    }
-    if (input == A10[0]){
-        tokens.push_back(input);
-        rules. push_back("A10");
-        return true;
-    }
-    if (input == A11[0]){
-        tokens.push_back(input);
-        rules. push_back("A11");
+#include "token.h"
+bool isZ3 (vector <string> &rules,int &i){
+    if ((rules[i] == "A4" && rules[i] == "A6") || (rules[i] == "A0" && rules[i] == "A6") || (rules[i] == "A7" && rules[i] == "A8") || (rules[i] == "A3" && rules[i] == "A6") ){
+        cout << "Z3" << endl;
+        i += 2;
         return true;
     }
     return false;
 }
 
-void operate(string &token, vector <string> &tokens, vector <string> &rules){
-    if (check(token, tokens, rules)){          
-    cout << token << endl;
-    cout << rules.back() << endl;
-    token.erase();
-    } 
+void parser (vector <string> &rules){
+    /*
+    else if (rules[i] == "A5" && rules[i] == "A3") {
+            cout << "Z4" << endl;
+            i+= 2;
+        }
+    */
+    int n = rules.size();
+    cout << n << endl;
+    for (int i = 0; i < n; i++){
+        if (n >= 2) {
+            if ( (rules[i] == "A3" && rules[i+1] == "A5") || (rules[i] == "A7" && rules[i+1] == "A5") || (rules[i] == "A0" && rules[i+1] == "A5")){
+                cout << "Z2" << endl;
+                i+=2;
+            } else if ((rules[i] == "A4" && rules[i+1] == "A6") || (rules[i] == "A0" && rules[i+1] == "A6") || (rules[i] == "A7" && rules[i+1] == "A8") || (rules[i] == "A3" && rules[i+1] == "A6") ){
+                cout << "Z3" << endl;
+                i+= 2;
+            } else if ((rules[i] == "A1" && rules[i+1] == "A9") || (rules[i] == "A0" && rules[i+1] == "A9") || (rules[i] == "A7" && rules[i+1] == "A9")){
+                cout << "Z5" << endl;
+                i+= 2;
+            }else if ((rules[i] == "A7" && rules[i+1] == "A10") || (rules[i] == "A1" && rules[i+1] == "A10") || (rules[i] == "A0" && rules[i+1] == "A10")){
+                cout << "Z6" << endl;
+                i+= 2;
+            }
+            cout << "ii: " << i << endl;
+
+            if((rules[i]== "A1") || (rules[i]== "A0") || (rules[i]== "A7")){
+                cout << "Z1" << endl;
+            } else if ((rules[i]== "A2") || (rules[i]== "A5")){
+                cout << "Z2" << endl;
+            }
+            cout << "ie: " << i << endl;
+        } else{
+            if((rules[i]== "A1") || (rules[i]== "A0") || (rules[i]== "A7")){
+                cout << "Z1" << endl;
+            } else if ((rules[i]== "A2") || (rules[i]== "A5")){
+                cout << "Z2" << endl;
+            }
+            cout << "ie: " << i << endl;
+        }
+    }
 }
 
 int main(){
@@ -108,7 +60,7 @@ int main(){
     string token;
     for (int i = 0; i < input.size(); i++){
         token.push_back(input[i]);
-        if (isSech(token) && input [i+1]== 's' && input[i+2] != 'i'){
+        if (isSech(token) && input [i+1]== 's' && input[i+2] != 'i'  && input [i+3] != 'c'){
             token.push_back(input[i+1]);
             i++;
             operate(token, tokens, rules);
@@ -122,4 +74,6 @@ int main(){
         }
         operate(token, tokens, rules);
     }
+
+    //parser(rules);
 }
