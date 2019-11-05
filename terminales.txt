@@ -1,0 +1,12 @@
+A0: vier | funf | acht | neun ;
+A1: ein| zwei |sechs |sieben;
+A2: elf | zolf;
+A3: sech | sieb;
+A4: zwan;
+A5: zehn;
+A6: zig;
+A7: drei;
+A8: ssing;
+A9: und;
+A10: hundert;
+A11: tausend;
