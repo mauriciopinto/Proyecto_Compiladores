@@ -20,7 +20,7 @@ void init_map(void){
         values.insert(pair<string, int>("neun", 9));
 	values.insert(pair<string, int>("zehn", 10));
         values.insert(pair<string, int>("elf", 11));
-        values.insert(pair<string, int>("zwolf", 12));
+        values.insert(pair<string, int>("zolf", 12));
         values.insert(pair<string, int>("sech", 6));
         values.insert(pair<string, int>("sieb", 7));
         values.insert(pair<string, int>("zwan", 2));
