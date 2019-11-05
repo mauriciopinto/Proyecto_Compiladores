@@ -479,7 +479,7 @@ int parse(string str){
 int main(){
 	init_map();
 	string number;
-	printf("Ingrese un numero en aleman");
+	printf("Ingrese un numero en aleman: ");
 	cin >> number;
 	if(!validate(number)){
 		printf("cadena invalida");
