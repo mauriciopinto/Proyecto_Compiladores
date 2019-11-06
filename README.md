@@ -3,7 +3,7 @@
 ## Authors:
 - Mauricio Pinto Larrea (40%)
 - Roosevelt Ubaldo Chavez (40%)
-- Fernado De los Heros Zuñiga (10%)
+- Fernado De los Heros Zuñiga (20%)
 
 Programe en C++ la gramática de números cardinales en alemán en forma normal de Chomsky:
 ```
